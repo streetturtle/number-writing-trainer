@@ -6,5 +6,5 @@ angular.module('myApp', [
   'myApp.main'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/main'});
+  $routeProvider.otherwise({redirectTo: 'app/main'});
 }]);
