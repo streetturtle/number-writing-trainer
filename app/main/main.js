@@ -11,6 +11,8 @@ angular.module('myApp.main', ['ngRoute'])
 
 .controller('MainCtrl', ['$scope', '$timeout', function($scope, $timeout) {
 
+  $scope.showSettings=false;
+
   $scope.show=false;
   $scope.lower=0;
   $scope.upper=10;
