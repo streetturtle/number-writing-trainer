@@ -11,7 +11,7 @@ angular.module('myApp.main', ['ngRoute'])
 
 .controller('MainCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
 
-  $scope.showSettings = false;
+  $scope.showSettings = true;
   $scope.showNumber = true;
   $scope.doPlay = false;
 
@@ -62,7 +62,7 @@ angular.module('myApp.main', ['ngRoute'])
 
   $scope.refresh();
 
-  $scope.check = function () {
+  $scope.check = function () {f
     if ($scope.inputString == $scope.result) {
       $timeout(function () {
         return $scope.refresh();
