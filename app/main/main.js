@@ -62,7 +62,7 @@ angular.module('myApp.main', ['ngRoute'])
 
   $scope.refresh();
 
-  $scope.check = function () {f
+  $scope.check = function () {
     if ($scope.inputString == $scope.result) {
       $timeout(function () {
         return $scope.refresh();
