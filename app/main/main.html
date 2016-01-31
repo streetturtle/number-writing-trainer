@@ -3,6 +3,7 @@
     <div class="panel-body">
 
       <div class="row">
+
         <div class="col-md-4">
           <i class="fa fa-cog" ng-click="showSettings=!showSettings" style="float:left"></i>
         </div>
@@ -10,8 +11,18 @@
         <div class="col-md-4">
           <span class="number">{{number}}</span>
         </div>
+
         <div class="col-md-4">
-          <i class="fa fa-question" ng-click="show=!show" style="float:right"></i>
+          <div class="row">
+            <div class="col-md-12">
+              <i class="fa fa-question" ng-click="show=!show" style="float:right"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <i class="fa fa-repeat" ng-click="play()" style="float:right"></i>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -47,6 +58,4 @@
       </div>
     </div>
   </div>
-</div>
-</div>
 </div>
