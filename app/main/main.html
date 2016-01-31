@@ -9,7 +9,8 @@
         </div>
 
         <div class="col-md-4">
-          <span class="number">{{number}}</span>
+          <span class="number" ng-show="showNumber">{{number}}</span>
+          <span class="number" ng-show="!showNumber"><i class="fa fa-eye-slash"></i></span>
         </div>
 
         <div class="col-md-4">
@@ -20,7 +21,7 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <i class="fa fa-repeat" ng-click="play()" style="float:right"></i>
+              <i class="fa fa-{{doPlay ? 'repeat' : 'volume-up'}}" ng-click="play()" style="float:right"></i>
             </div>
           </div>
         </div>
@@ -35,14 +36,7 @@
       </div>
 
       <div class="row" ng-show="showSettings">
-        <form class="form-inline">
-          <div class="form-group">
-            <label for="language">Language:</label>
-            <select ng-model="language" ng-change="generateWord()" required class="form-control" id="language">
-              <option ng-repeat="langOption in langOptions" value="{{langOption.code}}">{{langOption.name}}</option>
-            </select>
-          </div>
-        </form>
+
         <form class="form-inline" ng-show="showSettings">
           <div class="form-group" style="line-height:4">
             <label class="col-xs-2" style="line-height:4">Range:</label>
@@ -51,6 +45,30 @@
             </div>
             <div class="col-xs-5">
               <input type="text" class="form-control notinline" ng-model="upper">
+            </div>
+          </div>
+        </form>
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="language">Language:</label>
+            <select ng-model="language" ng-change="generateWord()" required class="form-control" id="language">
+              <option ng-repeat="langOption in langOptions" value="{{langOption.code}}">{{langOption.name}}</option>
+            </select>
+          </div>
+        </form>
+        <form>
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-model="showNumber"> Show number
+              </label>
+            </div>
+          </div>
+           <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-model="doPlay"> Speak number
+              </label>
             </div>
           </div>
         </form>

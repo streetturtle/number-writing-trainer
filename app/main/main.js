@@ -12,6 +12,8 @@ angular.module('myApp.main', ['ngRoute'])
 .controller('MainCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
 
   $scope.showSettings = false;
+  $scope.showNumber = true;
+  $scope.doPlay = false;
 
   $scope.show = false;
   $scope.lower = 0;
@@ -49,15 +51,13 @@ angular.module('myApp.main', ['ngRoute'])
     window.speechSynthesis.speak(msg);
   }
 
-  //  $scope.play();
-
-
   $scope.refresh = function () {
     $scope.number = Math.floor(Math.random() * $scope.upper) + $scope.lower;
     $scope.generateWord();
     $scope.inputString = '';
     $scope.show = false;
-    $scope.play();
+    if ($scope.doPlay)
+      $scope.play();
   }
 
   $scope.refresh();
