@@ -30,6 +30,7 @@
 
 .number{
   font-size: 3em;
+  font-family: 'Passion One';
 }
 
 .fa-cog, .fa-question, .fa-repeat, .fa-volume-up{
@@ -44,8 +45,12 @@ html,
 body {
   height: 100%;
 }
+
 .jumbotron.vertical-center {
   margin-bottom: 0;
+        background-color: #292929;
+    background-image: url(http://pavelmakhov.com/css/pics/random-grey-variations.png);
+
 }
 .vertical-center {
   min-height: 100%;

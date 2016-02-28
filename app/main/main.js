@@ -11,7 +11,7 @@ angular.module('myApp.main', ['ngRoute'])
 
 .controller('MainCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
 
-  $scope.showSettings = true;
+  $scope.showSettings = false;
   $scope.showNumber = true;
   $scope.doPlay = false;
 
@@ -44,6 +44,10 @@ angular.module('myApp.main', ['ngRoute'])
     });
   }
 
+  $scope.isSpeakNumberSupported = function(){
+    return ('speechSynthesis' in window);
+  }
+
   $scope.play = function () {
     var msg = new SpeechSynthesisUtterance();
     msg.text = $scope.number.toString();
@@ -63,7 +67,7 @@ angular.module('myApp.main', ['ngRoute'])
   $scope.refresh();
 
   $scope.check = function () {
-    if ($scope.inputString == $scope.result) {
+    if ($scope.inputString.toUpperCase() == $scope.result.toUpperCase()) {
       $timeout(function () {
         return $scope.refresh();
       }, 500)
