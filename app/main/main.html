@@ -52,7 +52,7 @@
           <div class="form-group">
             <label for="language">Language:</label>
             <select ng-model="language" ng-change="generateWord()" required class="form-control" id="language">
-              <option ng-repeat="langOption in langOptions" value="{{langOption.code}}">{{langOption.name}}</option>
+              <option ng-repeat="langOption in langOptions" value="{{langOption.code}}" ng-selected="$first">{{langOption.name}}</option>
             </select>
           </div>
         </form>
